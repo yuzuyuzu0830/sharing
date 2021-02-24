@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,3 +13,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
+
+Route::post('/register', 'Auth\RegisterController@register')->name('register');
